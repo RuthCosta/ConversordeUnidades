@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Conversor de Unidades</string>
+    <string-array name="unidades">
+        <item>Centímetros</item>
+        <item>Metros</item>
+        <item>Quilômetros</item>
+        <item>Milhas</item>
+    </string-array>
+
+</resources>
