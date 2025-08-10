@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:padding="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- Spinners lado a lado -->
+    <!-- Cabeçalho / Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Conversor de Unidades"
+        android:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Conteúdo da tela abaixo da toolbar -->
     <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="16dp">
+        android:layout_height="match_parent">
 
-        <Spinner
-            android:id="@+id/spinnerEntrada"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/spinnerSaida"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <!-- Linha com spinners -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp" />
+            android:layout_marginBottom="8dp">
+
+            <Spinner
+                android:id="@+id/spinnerFrom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o valor"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonConvert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Converter"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado aparecerá aqui"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp" />
     </LinearLayout>
-
-    <!-- Campo de entrada -->
-    <EditText
-        android:id="@+id/editValor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite o valor"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Botão de conversão -->
-    <Button
-        android:id="@+id/btnConverter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Converter"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Texto do resultado -->
-    <TextView
-        android:id="@+id/textResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Resultado"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center" />
-
 </LinearLayout>

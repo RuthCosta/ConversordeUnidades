@@ -9,6 +9,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +26,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spinnerEntrada = findViewById(R.id.spinnerEntrada);
-        spinnerSaida = findViewById(R.id.spinnerSaida);
-        editValor = findViewById(R.id.editValor);
-        btnConverter = findViewById(R.id.btnConverter);
-        textResultado = findViewById(R.id.textResultado);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        spinnerEntrada = findViewById(R.id.spinnerFrom);
+        spinnerSaida = findViewById(R.id.spinnerTo);
+        editValor = findViewById(R.id.editTextValue);
+        btnConverter = findViewById(R.id.buttonConvert);
+        textResultado = findViewById(R.id.editTextValue);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, unidades);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
